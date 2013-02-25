@@ -21,7 +21,7 @@ def read(*rnames):
 
 
 setup(name='z3c.ptcompat',
-      version='2.0.0a1',
+      version='2.0.0a2.dev0',
       description='Zope-compatible page template engine based on Chameleon.',
       long_description=(
         '.. contents::\n\n' +
