@@ -11,12 +11,10 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-
-__docformat__ = "reStructuredText"
-
-
-from zope.interface import implements
-from zope.interface import classProvides
+"""Engine
+"""
+from zope.interface import implementer
+from zope.interface import provider
 from zope.pagetemplate.interfaces import IPageTemplateEngine
 from zope.pagetemplate.interfaces import IPageTemplateProgram
 
@@ -24,9 +22,18 @@ from z3c.pt.pagetemplate import PageTemplate as ChameleonPageTemplate
 from chameleon.tal import RepeatDict
 
 
+# Py3: Fix Chameleon's RepeatDict, which cannot be adapted. Sigh.
+class TraversableRepeatDict(RepeatDict):
+    __providedBy__ = None
+    __provides__ = None
+
+    def __conform__(self, iface):
+        return None
+
+
+@implementer(IPageTemplateProgram)
+@provider(IPageTemplateEngine)
 class Program(object):
-    implements(IPageTemplateProgram)
-    classProvides(IPageTemplateEngine)
 
     def __init__(self, template):
         self.template = template
@@ -35,7 +42,7 @@ class Program(object):
         if tal is False:
             return self.template.body
 
-        context.vars['repeat'] = RepeatDict(context.repeat_vars)
+        context.vars['repeat'] = TraversableRepeatDict(context.repeat_vars)
 
         return self.template.render(**context.vars)
 

@@ -1,35 +1,52 @@
+##############################################################################
+#
+# Copyright (c) 2005 Zope Foundation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED 'AS IS' AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+"""Setup
+"""
 import os
-
 from setuptools import setup, find_packages
-
 
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 
-version = '1.0.2dev'
-
-tests_require = [
-    'zope.testing',
-    'zope.configuration',
-    ],
-
-
 setup(name='z3c.ptcompat',
-      version=version,
-      description="Zope-compatible page template engine based on Chameleon.",
+      version='2.0.0a1.dev',
+      description='Zope-compatible page template engine based on Chameleon.',
       long_description=(
-        ".. contents::\n\n" +
+        '.. contents::\n\n' +
         read('README.txt')
-        + "\n\n" +
-        read("CHANGES.txt")
+        + '\n\n' +
+        read('CHANGES.txt')
         ),
       classifiers=[
-        "Framework :: Plone",
-        "Framework :: Zope2",
-        "Framework :: Zope3",
-        "Programming Language :: Python",
-        "Topic :: Software Development :: Libraries :: Python Modules",
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Web Environment',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Zope Public License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Framework :: Plone',
+        'Framework :: Zope2',
+        'Framework :: Zope3',
         ],
       keywords='zpt template zope',
       url='http://pypi.python.org/pypi/z3c.ptcompat',
@@ -48,8 +65,12 @@ setup(name='z3c.ptcompat',
           'zope.traversing',
           ],
       extras_require=dict(
-          test=tests_require,
+          test=[
+            'zope.testing',
+            'zope.configuration'],
       ),
-      tests_require=tests_require,
-      test_suite="z3c.ptcompat",
+      tests_require=[
+        'zope.testing',
+        'zope.configuration'],
+      test_suite='z3c.ptcompat.tests.test_suite',
       )
