@@ -3,10 +3,6 @@ import unittest
 from zope.pagetemplate.tests import test_htmltests as reference
 
 
-def test_suite():
-    return unittest.makeSuite(HTMLTests)
-
-
 class HTMLTests(reference.HTMLTests):
     def setUp(self):
         import z3c.ptcompat
@@ -18,6 +14,15 @@ class HTMLTests(reference.HTMLTests):
 
         super(HTMLTests, self).setUp()
 
+class TestProgram(unittest.TestCase):
 
-if __name__ == '__main__':
-    unittest.TextTestRunner().run(test_suite())
+    def _makeOne(self, *args):
+        from z3c.ptcompat.engine import Program
+        return Program.cook(*args)
+
+    def test_call_with_no_tal_returns_template_body(self):
+        body = "<html />"
+        program, _ = self._makeOne(None, body, None, None)
+
+        result = program(None, None, tal=False)
+        self.assertEqual(result, body)
