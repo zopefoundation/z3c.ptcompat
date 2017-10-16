@@ -1,10 +1,11 @@
 Changelog
 =========
 
-2.1 (unreleased)
-----------------
+2.1.0 (unreleased)
+------------------
 
-- Nothing changed yet.
+- Fix rendering with Chameleon 3.0 and above. See `issue 2
+  <https://github.com/zopefoundation/z3c.ptcompat/issues/2>`_.
 
 
 2.0 (2016-09-02)
