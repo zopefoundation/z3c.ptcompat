@@ -6,6 +6,8 @@ Changelog
 
 - Fix rendering with Chameleon 3.0 and above. See `issue 2
   <https://github.com/zopefoundation/z3c.ptcompat/issues/2>`_.
+- Add support for Python 3.6.
+- Drop support for Python 3.3.
 
 
 2.0 (2016-09-02)
