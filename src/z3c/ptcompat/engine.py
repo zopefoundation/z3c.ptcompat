@@ -39,7 +39,7 @@ class Program(object):
         self.template = template
 
     def __call__(self, context, macros, tal=True, **options):
-        if tal is False:
+        if not tal:
             return self.template.body
 
         context.vars['repeat'] = TraversableRepeatDict(context.repeat_vars)

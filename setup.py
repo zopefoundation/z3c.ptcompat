@@ -19,15 +19,20 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
+TESTS_REQUIRE = [
+    'zope.configuration',
+    'zope.testing',
+    'zope.testrunner',
+]
 
 setup(
     name='z3c.ptcompat',
-    version='2.1.dev0',
+    version='2.1.0.dev0',
     description='Zope-compatible page template engine based on Chameleon.',
     long_description='\n\n'.join((
         '.. contents::',
-        read('README.txt'),
-        read('CHANGES.txt'),
+        read('README.rst'),
+        read('CHANGES.rst'),
     )),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -38,9 +43,9 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
@@ -52,7 +57,7 @@ setup(
         'Framework :: Zope3',
     ],
     keywords='zpt template zope',
-    url='http://pypi.python.org/pypi/z3c.ptcompat',
+    url='https://github.com/zopefoundation/z3c.ptcompat',
     author='Zope Corporation and Contributors',
     author_email='zope-dev@zope.org',
     license='ZPL',
@@ -67,13 +72,9 @@ setup(
         'zope.pagetemplate >= 3.6.2',
         'zope.traversing',
     ],
-    extras_require=dict(
-        test=[
-            'zope.testing',
-            'zope.configuration'],
-    ),
-    tests_require=[
-        'zope.testing',
-        'zope.configuration'],
+    extras_require={
+        'test': TESTS_REQUIRE,
+    },
+    tests_require=TESTS_REQUIRE,
     test_suite='z3c.ptcompat.tests.test_suite',
 )
