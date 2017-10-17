@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.1.0 (unreleased)
+2.1.0 (2017-10-17)
 ------------------
 
 - Fix rendering with Chameleon 3.0 and above. See `issue 2
