@@ -54,7 +54,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Framework :: Plone',
         'Framework :: Zope2',
-        'Framework :: Zope3',
+        'Framework :: Zope :: 3',
     ],
     keywords='zpt template zope',
     url='https://github.com/zopefoundation/z3c.ptcompat',
