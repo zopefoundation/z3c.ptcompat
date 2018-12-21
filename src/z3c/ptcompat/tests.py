@@ -8,16 +8,19 @@ class HTMLTests(reference.HTMLTests):
         import z3c.ptcompat
         import zope.component.testing
         import zope.configuration.xmlconfig
+
         zope.component.testing.setUp(self)
         zope.configuration.xmlconfig.XMLConfig(
-            'configure.zcml', z3c.ptcompat)()
+            "configure.zcml", z3c.ptcompat
+        )()
 
         super(HTMLTests, self).setUp()
 
-class TestProgram(unittest.TestCase):
 
+class TestProgram(unittest.TestCase):
     def _makeOne(self, *args):
         from z3c.ptcompat.engine import Program
+
         return Program.cook(*args)
 
     def test_call_with_no_tal_returns_template_body(self):
