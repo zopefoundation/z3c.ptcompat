@@ -71,6 +71,4 @@ setup(
         "zope.traversing",
     ],
     extras_require={"test": TESTS_REQUIRE},
-    tests_require=TESTS_REQUIRE,
-    test_suite="z3c.ptcompat.tests.test_suite",
 )
