@@ -124,7 +124,8 @@ def main(options, args):
         output, err = proc.communicate("\n".join(diffs) + "\n")
 
         if proc.returncode != 0:
-            map(status, output.split("\n"))
+            for line in output.split("\n"):
+                status(line)
             status("An error occurred while applying patches.")
             break
     else:
@@ -145,13 +146,12 @@ def create_diff(filename):
         new = exp.sub(replacement, new)
 
     if original != new:
-        return "\n".join(
-            map(
-                str.rstrip,
-                difflib.unified_diff(
-                    original.split("\n"), new.split("\n"), filename, filename
-                ),
-            )
+        return ''.join(
+            difflib.unified_diff(
+                original.splitlines(True),
+                new.splitlines(True),
+                filename,
+                filename)
         )
 
 
