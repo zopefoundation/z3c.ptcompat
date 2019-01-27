@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.1.1 (unreleased)
+2.2.0 (2019-01-27)
 ------------------
 
 - Add support for Python 3.7.
