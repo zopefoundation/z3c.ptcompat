@@ -4,7 +4,9 @@ Changelog
 2.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add support for Python 3.7.
+
+- Drop support for running the tests using `python setup.py test`
 
 
 2.1.0 (2017-10-17)

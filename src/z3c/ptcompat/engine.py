@@ -34,7 +34,6 @@ class TraversableRepeatDict(RepeatDict):
 @implementer(IPageTemplateProgram)
 @provider(IPageTemplateEngine)
 class Program(object):
-
     def __init__(self, template):
         self.template = template
 
@@ -42,7 +41,7 @@ class Program(object):
         if not tal:
             return self.template.body
 
-        context.vars['repeat'] = TraversableRepeatDict(context.repeat_vars)
+        context.vars["repeat"] = TraversableRepeatDict(context.repeat_vars)
 
         return self.template.render(**context.vars)
 
@@ -51,7 +50,7 @@ class Program(object):
         # Chameleon doesn't like to have a 'filename' of None;
         # see https://github.com/zopefoundation/z3c.ptcompat/issues/2
         template = ChameleonPageTemplate(
-            text, filename=source_file or '<string>', keep_body=True,
-            )
+            text, filename=source_file or "<string>", keep_body=True
+        )
 
         return cls(template), template.macros
