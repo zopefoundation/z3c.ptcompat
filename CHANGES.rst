@@ -4,7 +4,9 @@ Changelog
 2.3.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add support for Python 3.8, 3.9, and 3.10.
+
+- Drop support for Python 3.4.
 
 
 2.2.0 (2019-01-27)
