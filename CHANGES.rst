@@ -4,7 +4,7 @@ Changelog
 3.0 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Drop support for Python 2.7, 3.5, 3.6.
 
 
 2.3.0 (2021-12-16)
