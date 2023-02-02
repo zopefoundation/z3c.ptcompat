@@ -32,7 +32,7 @@ class TraversableRepeatDict(RepeatDict):
 
 @implementer(IPageTemplateProgram)
 @provider(IPageTemplateEngine)
-class Program(object):
+class Program:
     def __init__(self, template):
         self.template = template
 

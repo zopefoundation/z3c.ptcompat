@@ -15,7 +15,7 @@ class HTMLTests(reference.HTMLTests):
             "configure.zcml", z3c.ptcompat
         )()
 
-        super(HTMLTests, self).setUp()
+        super().setUp()
 
 
 class TestProgram(unittest.TestCase):
