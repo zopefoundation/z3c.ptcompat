@@ -13,13 +13,12 @@
 ##############################################################################
 """Engine
 """
+from chameleon.tal import RepeatDict
+from z3c.pt.pagetemplate import PageTemplate as ChameleonPageTemplate
 from zope.interface import implementer
 from zope.interface import provider
 from zope.pagetemplate.interfaces import IPageTemplateEngine
 from zope.pagetemplate.interfaces import IPageTemplateProgram
-
-from z3c.pt.pagetemplate import PageTemplate as ChameleonPageTemplate
-from chameleon.tal import RepeatDict
 
 
 # Py3: Fix Chameleon's RepeatDict, which cannot be adapted. Sigh.
