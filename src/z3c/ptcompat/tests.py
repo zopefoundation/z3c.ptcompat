@@ -5,16 +5,17 @@ from zope.pagetemplate.tests import test_htmltests as reference
 
 class HTMLTests(reference.HTMLTests):
     def setUp(self):
-        import z3c.ptcompat
         import zope.component.testing
         import zope.configuration.xmlconfig
+
+        import z3c.ptcompat
 
         zope.component.testing.setUp(self)
         zope.configuration.xmlconfig.XMLConfig(
             "configure.zcml", z3c.ptcompat
         )()
 
-        super(HTMLTests, self).setUp()
+        super().setUp()
 
 
 class TestProgram(unittest.TestCase):
