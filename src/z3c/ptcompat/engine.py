@@ -21,7 +21,7 @@ from zope.pagetemplate.interfaces import IPageTemplateEngine
 from zope.pagetemplate.interfaces import IPageTemplateProgram
 
 
-# Py3: Fix Chameleon's RepeatDict, which cannot be adapted. Sigh.
+# Fix Chameleon's RepeatDict, which cannot be adapted. Sigh.
 class TraversableRepeatDict(RepeatDict):
     __providedBy__ = None
     __provides__ = None
@@ -33,6 +33,7 @@ class TraversableRepeatDict(RepeatDict):
 @implementer(IPageTemplateProgram)
 @provider(IPageTemplateEngine)
 class Program:
+
     def __init__(self, template):
         self.template = template
 
@@ -48,8 +49,8 @@ class Program:
     def cook(cls, source_file, text, engine, content_type):
         # Chameleon doesn't like to have a 'filename' of None;
         # see https://github.com/zopefoundation/z3c.ptcompat/issues/2
-        template = ChameleonPageTemplate(
-            text, filename=source_file or "<string>", keep_body=True
-        )
+        template = ChameleonPageTemplate(text,
+                                         filename=source_file or "<string>",
+                                         keep_body=True)
 
         return cls(template), template.macros
