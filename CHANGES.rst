@@ -4,7 +4,7 @@ Changelog
 4.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add support for Python 3.13.
 
 
 4.0 (2024-06-07)
