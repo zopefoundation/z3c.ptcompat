@@ -1,11 +1,12 @@
 #!/usr/bin/python2.5
 
-import os
-import re
-import sys
 import difflib
 import optparse
+import os
+import re
 import subprocess
+import sys
+
 
 parser = optparse.OptionParser()
 parser.add_option(
