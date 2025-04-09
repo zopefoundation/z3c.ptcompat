@@ -28,7 +28,7 @@ TESTS_REQUIRE = ["zope.configuration", "zope.testing", "zope.testrunner"]
 
 setup(
     name="z3c.ptcompat",
-    version="4.1.dev0",
+    version="4.1",
     description="Zope-compatible page template engine based on Chameleon.",
     long_description="\n\n".join(
         (".. contents::", read("README.rst"), read("CHANGES.rst"))
