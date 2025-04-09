@@ -15,7 +15,6 @@
 """
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -24,7 +23,10 @@ def read(*rnames):
         return f.read()
 
 
-TESTS_REQUIRE = ["zope.configuration", "zope.testing", "zope.testrunner"]
+TESTS_REQUIRE = [
+    "zope.configuration",
+    "zope.testing",
+    "zope.testrunner >= 6.4"]
 
 setup(
     name="z3c.ptcompat",
@@ -64,9 +66,6 @@ setup(
     author="Zope Foundation and Contributors",
     author_email="zope-dev@zope.dev",
     license="ZPL",
-    packages=find_packages("src"),
-    package_dir={"": "src"},
-    namespace_packages=["z3c"],
     include_package_data=True,
     zip_safe=False,
     python_requires='>=3.9',
