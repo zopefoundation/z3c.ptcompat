@@ -30,7 +30,7 @@ TESTS_REQUIRE = [
 
 setup(
     name="z3c.ptcompat",
-    version="5.0.dev0",
+    version="5.0",
     description="Zope-compatible page template engine based on Chameleon.",
     long_description="\n\n".join(
         (".. contents::", read("README.rst"), read("CHANGES.rst"))
