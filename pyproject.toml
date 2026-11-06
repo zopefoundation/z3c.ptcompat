@@ -7,6 +7,59 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+
+[project]
+name = "z3c.ptcompat"
+version = "5.1.dev0"
+description = "Zope-compatible page template engine based on Chameleon."
+license = "ZPL-2.1"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Framework :: Plone",
+    "Framework :: Zope :: 3",
+    "Framework :: Zope :: 5",
+]
+dynamic = ["readme"]
+requires-python = ">=3.11"
+authors = [
+    {name = "Zope Foundation and contributors",email = "zope-dev@zope.dev"},
+]
+maintainers = [
+    {name = "Plone Foundation and contributors",email = "zope-dev@zope.dev"},
+]
+dependencies = [
+    "z3c.pt >= 3.0.0a1",
+    "zope.pagetemplate >= 3.6.2",
+    "zope.traversing",
+]
+keywords = ["zpt", "template", "zope"]
+
+[project.optional-dependencies]
+test = [
+    "zope.configuration",
+    "zope.testing",
+    "zope.testrunner >= 6.4",
+]
+
+[project.urls]
+Source = "https://github.com/zopefoundation/z3c.ptcompat"
+Issues = "https://github.com/zopefoundation/z3c.ptcompat/issues"
+Changelog = "https://raw.githubusercontent.com/zopefoundation/z3c.ptcompat/master/CHANGES.rst"
+
 [tool.coverage.run]
 branch = true
 source = ["z3c.ptcompat"]
@@ -29,3 +82,6 @@ exclude_lines = [
 
 [tool.coverage.html]
 directory = "parts/htmlcov"
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.rst", "CHANGES.rst"]}
