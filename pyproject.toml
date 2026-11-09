@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "z3c.ptcompat"
-version = "5.1.dev0"
+version = "5.1"
 description = "Zope-compatible page template engine based on Chameleon."
 license = "ZPL-2.1"
 classifiers = [
